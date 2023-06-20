@@ -66,6 +66,9 @@ class LightFMHandler(BaseMLEngine):
         # todo evaluate model
         # todo check and return precision@k
 
+        item_vec = model.get_item_representations()
+        user_vec = model.get_user_representations()
+
         self.model_storage.file_set("model", dill.dumps(model))
         self.model_storage.json_set("args", args)
 
